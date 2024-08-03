@@ -1,7 +1,9 @@
 package carsharing.command;
 
 public interface Command {
-    boolean execute();
+    default boolean execute() {
+        return true;
+    };
 
     Context getContext();
 }

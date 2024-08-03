@@ -26,9 +26,8 @@ public class CompanyDao {
                FROM company;""";
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                companies.add(new Company(id, name));
+                Company company = getCompany(resultSet);
+                companies.add(company);
             }
             return companies;
         } catch (SQLException e) {
@@ -36,6 +35,13 @@ public class CompanyDao {
             e.printStackTrace();
         }
         return List.of();
+    }
+
+    private static Company getCompany(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt("id");
+        String name = resultSet.getString("name");
+        Company company = new Company(id, name);
+        return company;
     }
 
     public boolean add(String companyName) {
@@ -48,6 +54,24 @@ public class CompanyDao {
             System.out.printf("Failed add [%s] company.%n", companyName);
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public Company getById(Integer companyId) {
+        String sql = "SELECT * FROM company WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, companyId); // Set the parameter
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return getCompany(resultSet);
+            } else {
+                System.out.printf("No company found with id [%d].%n", companyId);
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.printf("Failed to get company with id [%d].%n", companyId);
+            e.printStackTrace();
+            return null;
         }
     }
 }

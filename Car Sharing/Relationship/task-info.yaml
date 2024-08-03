@@ -52,6 +52,27 @@ files:
   - name: src/carsharing/dao/CompanyDao.java
     visible: true
     learner_created: true
+  - name: src/carsharing/command/context/CompanyListMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyListBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/CompanyMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCarListCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCreateCarCommand.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11503#comment
 status: Unchecked
 record: -1

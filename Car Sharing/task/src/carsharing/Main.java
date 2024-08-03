@@ -22,12 +22,21 @@ public class Main {
 
     private static void createTables(Connection connection) throws SQLException {
         try (Statement statement = connection.createStatement()) {
-            String createTableQuery = """
+            String createCompanySql = """
                CREATE TABLE IF NOT EXISTS company (
                    id INTEGER PRIMARY KEY AUTO_INCREMENT,
                    name VARCHAR UNIQUE NOT NULL
                )""";
-            statement.executeUpdate(createTableQuery);
+            statement.executeUpdate(createCompanySql);
+
+            String createCarSql = """
+               CREATE TABLE IF NOT EXISTS car (
+                   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                   name VARCHAR UNIQUE NOT NULL,
+                   company_id INTEGER,
+                   FOREIGN KEY (company_id) REFERENCES company(id)
+               )""";
+            statement.executeUpdate(createCarSql);
         }
     }
 

@@ -13,6 +13,48 @@ files:
     visible: true
     is_binary: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/140/stages/759/implement#comment
-status: Unchecked
+  - name: src/carsharing/command/Command.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CommandPrompt.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/Context.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/MainMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/LoginAsManagerCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/ExitCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/ManagerMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyListCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CreateCompanyCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/ManagerBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/CompanyDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/ConnectionManager.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entity/Company.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/11502#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 03 Aug 2024 08:55:44 UTC"
 record: -1

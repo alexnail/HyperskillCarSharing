@@ -1,30 +1,32 @@
 package carsharing;
 
+import carsharing.command.CommandPrompt;
+import carsharing.dao.ConnectionManager;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class Main {
-    private static final String JDBC_DRIVER = "org.h2.Driver";
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         String databaseFileName = getArgsParam(args, "databaseFileName", "carsharing");
-        String url = "jdbc:h2:./src/carsharing/db/%s".formatted(databaseFileName);
+        createTables(ConnectionManager.initConnection("jdbc:h2:./src/carsharing/db/%s".formatted(databaseFileName)));
 
-        Class.forName(JDBC_DRIVER);
-        Connection connection = DriverManager.getConnection(url);
-        connection.setAutoCommit(true);
-        createTables(connection);
+        Scanner scanner = new Scanner(System.in);
+        CommandPrompt prompt = new CommandPrompt(scanner);
+        while (prompt.command().execute()) {
+        }
     }
 
     private static void createTables(Connection connection) throws SQLException {
         try (Statement statement = connection.createStatement()) {
             String createTableQuery = """
-              CREATE TABLE IF NOT EXISTS company (
-                  `id` INTEGER,
-                  `name` VARCHAR
-              )""";
+               CREATE TABLE IF NOT EXISTS company (
+                   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                   name VARCHAR UNIQUE NOT NULL
+               )""";
             statement.executeUpdate(createTableQuery);
         }
     }

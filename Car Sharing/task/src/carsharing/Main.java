@@ -33,7 +33,7 @@ public class Main {
                CREATE TABLE IF NOT EXISTS car (
                    id INTEGER PRIMARY KEY AUTO_INCREMENT,
                    name VARCHAR UNIQUE NOT NULL,
-                   company_id INTEGER,
+                   company_id INTEGER NOT NULL,
                    FOREIGN KEY (company_id) REFERENCES company(id)
                )""";
             statement.executeUpdate(createCarSql);

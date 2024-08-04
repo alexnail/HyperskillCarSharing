@@ -1,10 +1,10 @@
 package carsharing.command;
 
-import carsharing.command.context.CompanyListMenu;
+import carsharing.command.context.ManagerMenu;
 
 public class CompanyBackCommand implements Command {
     @Override
     public Context getContext() {
-        return CompanyListMenu.get();
+        return ManagerMenu.get();
     }
 }

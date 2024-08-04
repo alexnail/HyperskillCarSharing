@@ -25,7 +25,7 @@ files:
   - name: src/carsharing/command/context/MainMenu.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyListCommand.java
+  - name: src/carsharing/command/ManagerCompanyListCommand.java
     visible: true
     learner_created: true
   - name: src/carsharing/command/Command.java
@@ -73,6 +73,18 @@ files:
   - name: src/carsharing/command/CompanyCreateCarCommand.java
     visible: true
     learner_created: true
+  - name: src/carsharing/dao/CarDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entity/Car.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/Util.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11503#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 04 Aug 2024 21:34:38 UTC"
 record: -1

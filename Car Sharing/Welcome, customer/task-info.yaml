@@ -10,6 +10,79 @@ files:
   - name: test/DatabaseUtil.java
     visible: false
     learner_created: false
+  - name: src/carsharing/command/context/ManagerMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/Util.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/Context.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCarListCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/CompanyListMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/ManagerBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CommandPrompt.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/ExitCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyCreateCarCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/carsharing/command/LoginAsManagerCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entity/Car.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/MainMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/CarDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/Command.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CreateCompanyCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/CompanyMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/ConnectionManager.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/ManagerCompanyListCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entity/Company.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/CompanyDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CompanyListBackCommand.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11504#comment
 status: Unchecked
 record: -1

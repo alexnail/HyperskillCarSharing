@@ -22,7 +22,7 @@ public class ManagerMenu implements Context {
     @Override
     public Command getCommand(Integer choice) {
         return switch (choice) {
-            case 1 -> new CompanyListCommand();
+            case 1 -> new ManagerCompanyListCommand();
             case 2 -> new CreateCompanyCommand();
             case 0 -> new ManagerBackCommand();
             default -> throw new IllegalStateException("Unexpected value: " + choice);

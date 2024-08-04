@@ -29,7 +29,7 @@ public class CompanyListMenu implements Context {
         List<Company> all = dao.getAll();
         AtomicInteger idx = new AtomicInteger(1);
         if (!all.isEmpty()) {
-            System.out.println("Choose the company:");
+            //System.out.println("Choose the company:");
             all.stream()
                     .sorted(Comparator.comparing(Company::getId))
                     .forEach(c -> System.out.println(idx.getAndIncrement() + ". " + c.getName()));

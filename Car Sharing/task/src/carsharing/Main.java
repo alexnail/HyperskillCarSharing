@@ -1,12 +1,12 @@
 package carsharing;
 
+import carsharing.command.Command;
 import carsharing.command.CommandPrompt;
 import carsharing.dao.ConnectionManager;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class Main {
 
@@ -14,9 +14,11 @@ public class Main {
         String databaseFileName = getArgsParam(args, "databaseFileName", "carsharing");
         createTables(ConnectionManager.initConnection("jdbc:h2:./src/carsharing/db/%s".formatted(databaseFileName)));
 
-        Scanner scanner = new Scanner(System.in);
-        CommandPrompt prompt = new CommandPrompt(scanner);
-        while (prompt.command().execute()) {
+        CommandPrompt prompt = new CommandPrompt();
+        while (true) {
+            Command command = prompt.command();
+            if (!command.execute()) break;
+            prompt.updateContext(command);
         }
     }
 

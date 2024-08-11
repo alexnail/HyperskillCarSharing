@@ -2,8 +2,8 @@ package carsharing.command.context;
 
 import carsharing.command.Command;
 import carsharing.command.Context;
-import carsharing.command.CustomerCommand;
-import carsharing.command.CustomerListBackCommand;
+import carsharing.command.customer.CustomerCommand;
+import carsharing.command.customer.CustomerListBackCommand;
 import carsharing.dao.CustomerDao;
 import carsharing.entity.Customer;
 

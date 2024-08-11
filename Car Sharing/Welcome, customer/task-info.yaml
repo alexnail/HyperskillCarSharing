@@ -98,10 +98,10 @@ files:
   - name: src/carsharing/entity/Customer.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CustomerListBackCommand.java
+  - name: src/carsharing/command/customer/CustomerListBackCommand.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CustomerCommand.java
+  - name: src/carsharing/command/customer/CustomerCommand.java
     visible: true
     learner_created: true
   - name: src/carsharing/command/context/CustomerMenu.java

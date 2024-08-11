@@ -1,5 +1,7 @@
-package carsharing.command;
+package carsharing.command.customer;
 
+import carsharing.command.Command;
+import carsharing.command.Context;
 import carsharing.command.context.CustomerMenu;
 
 public class CustomerCommand implements Command {

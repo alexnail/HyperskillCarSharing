@@ -39,6 +39,15 @@ public class Main {
                    FOREIGN KEY (company_id) REFERENCES company(id)
                )""";
             statement.executeUpdate(createCarSql);
+
+            String createCustomerSql = """
+               CREATE TABLE IF NOT EXISTS customer (
+                   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                   name VARCHAR UNIQUE NOT NULL,
+                   rented_car_id INTEGER,
+                   FOREIGN KEY (rented_car_id) REFERENCES car(id)
+               )""";
+            statement.executeUpdate(createCustomerSql);
         }
     }
 

@@ -5,7 +5,7 @@ import carsharing.dao.CompanyDao;
 import carsharing.entity.Company;
 
 public class CompanyMenu implements Context {
-    CompanyDao dao = CompanyDao.get();
+    private final CompanyDao dao = CompanyDao.get();
     private final Integer companyIdx;
 
     public CompanyMenu(Integer companyIdx) {

@@ -83,6 +83,42 @@ files:
   - name: src/carsharing/command/CompanyListBackCommand.java
     visible: true
     learner_created: true
+  - name: src/carsharing/command/LoginAsCustomerCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CreateCustomerCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/dao/CustomerDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/CustomerListMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entity/Customer.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CustomerListBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/CustomerCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/CustomerMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/CustomerRentCarCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/CustomerReturnCarCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/CustomerShowRentedCarCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/CustomerBackCommand.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11504#comment
 status: Unchecked
 record: -1

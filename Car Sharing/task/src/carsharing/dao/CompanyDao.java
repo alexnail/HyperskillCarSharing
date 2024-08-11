@@ -51,7 +51,7 @@ public class CompanyDao {
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
-            System.out.printf("Failed add [%s] company.%n", companyName);
+            System.out.printf("Failed to add [%s] company.%n", companyName);
             e.printStackTrace();
             return false;
         }

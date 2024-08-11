@@ -19,10 +19,10 @@ files:
   - name: src/carsharing/command/Context.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyCarListCommand.java
+  - name: src/carsharing/command/company/CompanyCarListCommand.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyBackCommand.java
+  - name: src/carsharing/command/company/CompanyBackCommand.java
     visible: true
     learner_created: true
   - name: src/carsharing/command/context/CompanyListMenu.java
@@ -37,10 +37,10 @@ files:
   - name: src/carsharing/command/ExitCommand.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyCommand.java
+  - name: src/carsharing/command/company/CompanyCommand.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyCreateCarCommand.java
+  - name: src/carsharing/command/company/CompanyCreateCarCommand.java
     visible: true
     learner_created: true
   - name: src/carsharing/db/carsharing.mv.db
@@ -80,7 +80,7 @@ files:
   - name: src/carsharing/dao/CompanyDao.java
     visible: true
     learner_created: true
-  - name: src/carsharing/command/CompanyListBackCommand.java
+  - name: src/carsharing/command/company/CompanyListBackCommand.java
     visible: true
     learner_created: true
   - name: src/carsharing/command/LoginAsCustomerCommand.java

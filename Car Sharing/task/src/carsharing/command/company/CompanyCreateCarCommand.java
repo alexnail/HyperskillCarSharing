@@ -1,5 +1,7 @@
-package carsharing.command;
+package carsharing.command.company;
 
+import carsharing.command.Command;
+import carsharing.command.Context;
 import carsharing.command.context.CompanyMenu;
 import carsharing.dao.CarDao;
 

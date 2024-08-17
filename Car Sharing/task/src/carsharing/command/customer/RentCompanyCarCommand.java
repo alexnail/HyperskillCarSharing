@@ -7,34 +7,31 @@ import carsharing.dao.CarDao;
 import carsharing.dao.CompanyDao;
 import carsharing.dao.CustomerDao;
 import carsharing.entity.Car;
-import carsharing.entity.Company;
 import carsharing.entity.Customer;
 
-public class CustomerShowRentedCarCommand implements Command {
+public class RentCompanyCarCommand implements Command {
+
+    private final static CarDao carDao = CarDao.get();
     private final static CustomerDao customerDao = CustomerDao.get();
     private final static CompanyDao companyDao = CompanyDao.get();
-    private final static CarDao carDao = CarDao.get();
+
+    private final String carName;
+    private final Integer companyId;
     private final Integer customerId;
 
-    public CustomerShowRentedCarCommand(Integer customerId) {
+    public RentCompanyCarCommand(String carName, Integer companyId, Integer customerId) {
+        this.carName = carName;
+        this.companyId = companyId;
         this.customerId = customerId;
     }
 
     @Override
     public boolean execute() {
+        Car car = carDao.getByName(carName);
         Customer customer = customerDao.getById(customerId);
-        if (customer.getRentedCarId() == null) {
-            System.out.println("You didn't rent a car!");
-        } else {
-            Car car = carDao.getById(customer.getRentedCarId());
-            Company company = companyDao.getById(car.getCompanyId());
-            System.out.printf("""
-                    Your rented car:
-                    %s
-                    Company:
-                    %s
-                    """, car.getName(), company.getName());
-        }
+        customer.setRentedCarId(car.getId());
+        customerDao.update(customer);
+        System.out.printf("You rented '%s'%n", car.getName());
         return true;
     }
 

@@ -45,9 +45,44 @@ public class CustomerDao {
         return customers;
     }
 
+    public Customer getById(Integer customerId) {
+        String sql = "SELECT * FROM customer WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, customerId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return getCustomer(rs);
+            } else {
+                System.out.printf("No customer found with id=[%s].%n", customerId);
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.printf("Failed to get customer with id=[%s].%n", customerId);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private Customer getCustomer(ResultSet rs) throws SQLException {
         return new Customer(rs.getInt("id"),
                 rs.getString("name"),
                 rs.getObject("rented_car_id", Integer.class));
+    }
+
+    public void update(Customer customer) {
+        String sql = """
+            UPDATE customer
+            SET name = ?, rented_car_id = ?
+            WHERE id = ?
+        """;
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, customer.getName());
+            ps.setObject(2, customer.getRentedCarId(), Types.INTEGER);
+            ps.setInt(3, customer.getId());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.printf("Failed to update customer with id=[%s].%n", customer.getId());
+            e.printStackTrace();
+        }
     }
 }

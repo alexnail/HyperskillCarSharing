@@ -22,7 +22,13 @@ public class CarDao {
 
     public List<Car> getCarsForCompany(Integer companyId) {
         List<Car> cars = new ArrayList<>();
-        String sql = "SELECT * FROM car WHERE company_id = ?";
+        String sql = """
+            SELECT c.* 
+            FROM car c 
+            WHERE c.company_id = ?
+            AND c.id NOT IN (SELECT rented_car_id 
+                             FROM customer 
+                             WHERE rented_car_id IS NOT NULL)""";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, companyId);
             ResultSet resultSet = statement.executeQuery();
@@ -51,5 +57,41 @@ public class CarDao {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public Car getByName(String carName) {
+        String sql = "SELECT * FROM car WHERE name = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, carName);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                return new Car(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getInt("company_id"));
+            }
+        } catch (SQLException e) {
+            System.out.printf("Failed to find a car with name [%s].%n", carName);
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Car getById(Integer carId) {
+        String sql = "SELECT * FROM car WHERE id = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, carId);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                return new Car(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getInt("company_id"));
+            }
+        } catch (SQLException e) {
+            System.out.printf("Failed to find a car with ID [%s].%n", carId);
+            e.printStackTrace();
+        }
+        return null;
     }
 }

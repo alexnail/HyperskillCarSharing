@@ -2,8 +2,10 @@ package carsharing.command.customer;
 
 import carsharing.command.Command;
 import carsharing.command.Context;
+import carsharing.command.context.CustomerMenu;
 import carsharing.dao.CompanyDao;
 import carsharing.dao.CustomerDao;
+import carsharing.entity.Customer;
 
 public class CustomerReturnCarCommand implements Command {
     CustomerDao customerDao = CustomerDao.get();
@@ -15,7 +17,20 @@ public class CustomerReturnCarCommand implements Command {
     }
 
     @Override
+    public boolean execute() {
+        Customer customer = customerDao.getById(customerId);
+        if (customer.getRentedCarId() == null) {
+            System.out.println("You didn't rent a car!");
+        } else {
+            customer.setRentedCarId(null);
+            customerDao.update(customer);
+            System.out.println("You've returned a rented car!");
+        }
+        return true;
+    }
+
+    @Override
     public Context getContext() {
-        return null;
+        return CustomerMenu.get(customerId);
     }
 }

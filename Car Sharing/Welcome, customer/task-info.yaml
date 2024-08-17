@@ -119,6 +119,31 @@ files:
   - name: src/carsharing/command/customer/CustomerBackCommand.java
     visible: true
     learner_created: true
+  - name: src/carsharing/db/carsharing.trace.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/ChooseCompanyMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/ChooseCompanyBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/ChooseCompanyCar.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/context/ChooseCompanyCarMenu.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/ChooseCompanyCarBackCommand.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/command/customer/RentCompanyCarCommand.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11504#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 17 Aug 2024 14:15:05 UTC"
 record: -1
